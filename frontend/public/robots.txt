@@ -1,0 +1,15 @@
+# Robots.txt for Carson Blog
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: http://localhost/Carson-blog/backend/api/sitemap.php
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+
+# Disallow API endpoints
+Disallow: /api/
