@@ -49,9 +49,9 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 min-h-screen flex flex-col">
+    <aside className="w-64 bg-white dark:bg-[#000B18] border-r border-gray-200 dark:border-gray-800 min-h-screen flex flex-col transition-colors duration-300">
       {/* Logo */}
-      <div className="p-6 border-b border-gray-200">
+      <div className="p-6 border-b border-gray-200 dark:border-gray-800">
         <Link href="/admin" className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00b4d8] to-[#0077b6]" />
           <span className="text-xl font-display font-bold bg-gradient-to-r from-[#00b4d8] to-[#0077b6] bg-clip-text text-transparent">
@@ -64,8 +64,8 @@ export default function Sidebar() {
               {username[0]?.toUpperCase()}
             </div>
             <div className="overflow-hidden">
-              <p className="text-sm font-medium text-gray-800 truncate">{username}</p>
-              <p className="text-xs text-gray-500">{roleLabel[userRole] ?? userRole}</p>
+              <p className="text-sm font-medium text-gray-800 dark:text-white truncate">{username}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">{roleLabel[userRole] ?? userRole}</p>
             </div>
           </div>
         )}
@@ -84,7 +84,7 @@ export default function Sidebar() {
               className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${
                 isActive
                   ? 'bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white shadow-md'
-                  : 'text-gray-700 hover:bg-gray-50'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f2040]'
               }`}
             >
               <Icon className="w-5 h-5" />
@@ -95,10 +95,10 @@ export default function Sidebar() {
       </nav>
 
       {/* Logout */}
-      <div className="p-4 border-t border-gray-200">
+      <div className="p-4 border-t border-gray-200 dark:border-gray-800">
         <button
           onClick={handleLogout}
-          className="flex items-center space-x-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 transition-all w-full"
+          className="flex items-center space-x-3 px-4 py-3 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all w-full"
         >
           <FiLogOut className="w-5 h-5" />
           <span className="font-medium">Logout</span>

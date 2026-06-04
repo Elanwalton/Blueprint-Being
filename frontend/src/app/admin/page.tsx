@@ -60,8 +60,8 @@ export default function AdminDashboard() {
     <div className="p-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">Dashboard</h1>
-        <p className="text-gray-600">Welcome back! Here's what's happening with your blog.</p>
+        <h1 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-2">Dashboard</h1>
+        <p className="text-gray-600 dark:text-gray-400">Welcome back! Here's what's happening with your blog.</p>
       </div>
 
       {/* Stats Grid */}
@@ -93,9 +93,9 @@ export default function AdminDashboard() {
       </div>
 
       {/* Recent Posts */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white dark:bg-[#0f2040] rounded-xl shadow-sm dark:shadow-none border border-gray-100 dark:border-gray-700 p-6">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-display font-bold text-gray-900">Recent Posts</h2>
+          <h2 className="text-xl font-display font-bold text-gray-900 dark:text-white">Recent Posts</h2>
           <Link
             href="/admin/posts"
             className="text-sm text-[#00b4d8] hover:underline font-medium"
@@ -109,11 +109,11 @@ export default function AdminDashboard() {
             {recentPosts.map((post) => (
               <div
                 key={post.id}
-                className="flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-[#1a2c50] transition-colors"
               >
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 mb-1">{post.title}</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{post.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     {post.view_count} views • {post.comment_count} comments
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function AdminDashboard() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-8 text-gray-500">
+          <div className="text-center py-8 text-gray-500 dark:text-gray-400">
             <p>No posts yet. Create your first post!</p>
             <Link
               href="/admin/posts/new"
