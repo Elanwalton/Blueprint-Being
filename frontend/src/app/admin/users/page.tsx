@@ -76,7 +76,7 @@ export default function UsersManagement() {
         </div>
         <Link
           href="/admin/users/new"
-          className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all"
+          className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all"
         >
           <FiPlus className="w-5 h-5 mr-2" />
           Add User
@@ -87,7 +87,7 @@ export default function UsersManagement() {
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]"></div>
           </div>
         ) : (
           <UserTable 

@@ -262,7 +262,7 @@ export default function NewPost() {
             value={formData.title}
             onChange={(e) => handleTitleChange(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-lg font-semibold text-gray-900 bg-white"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-lg font-semibold text-gray-900 bg-white"
             placeholder="Enter post title..."
           />
         </div>
@@ -274,7 +274,7 @@ export default function NewPost() {
             value={formData.excerpt}
             onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
             rows={3}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none resize-none text-gray-900 bg-white"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none resize-none text-gray-900 bg-white"
             placeholder="Brief description of your post..."
           />
         </div>
@@ -295,7 +295,7 @@ export default function NewPost() {
             <button
               type="button"
               onClick={() => setShowEmbedInput(!showEmbedInput)}
-              className="inline-flex items-center px-3 py-1.5 text-sm rounded-lg border border-gray-200 text-gray-600 hover:border-[#8B1E1E] hover:text-[#8B1E1E] transition-colors"
+              className="inline-flex items-center px-3 py-1.5 text-sm rounded-lg border border-gray-200 text-gray-600 hover:border-[#00b4d8] hover:text-[#00b4d8] transition-colors"
             >
               <FiLink className="w-4 h-4 mr-1.5" />
               Embed Social / Video
@@ -307,9 +307,9 @@ export default function NewPost() {
                   value={embedUrl}
                   onChange={(e) => setEmbedUrl(e.target.value)}
                   placeholder="Paste YouTube, Twitter, Instagram, TikTok or Facebook URL..."
-                  className="flex-1 px-3 py-2 rounded-lg border border-gray-200 text-sm focus:border-[#8B1E1E] outline-none text-gray-900 bg-white"
+                  className="flex-1 px-3 py-2 rounded-lg border border-gray-200 text-sm focus:border-[#00b4d8] outline-none text-gray-900 bg-white"
                 />
-                <button type="button" onClick={addEmbed} className="px-4 py-2 rounded-lg bg-[#8B1E1E] text-white text-sm hover:bg-[#6B1515]">Add</button>
+                <button type="button" onClick={addEmbed} className="px-4 py-2 rounded-lg bg-[#00b4d8] text-white text-sm hover:bg-[#023e8a]">Add</button>
               </div>
             )}
             {embeds.map((u, i) => <SocialEmbed key={i} url={u} />)}
@@ -334,7 +334,7 @@ export default function NewPost() {
               <select
                 value={formData.category_id}
                 onChange={(e) => setFormData({ ...formData, category_id: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-gray-900 bg-white"
               >
                 <option value="">Select category</option>
                 {categories.map((cat) => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
@@ -346,7 +346,7 @@ export default function NewPost() {
               <select
                 value={formData.status}
                 onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-gray-900 bg-white"
               >
                 {statusOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
               </select>
@@ -359,7 +359,7 @@ export default function NewPost() {
                   type="datetime-local"
                   value={formData.publish_date}
                   onChange={(e) => setFormData({ ...formData, publish_date: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-gray-900 bg-white"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-gray-900 bg-white"
                 />
               </div>
             )}
@@ -395,7 +395,7 @@ export default function NewPost() {
                       {formData.slug.length}/75
                     </span>
                   </label>
-                  <div className="flex items-center rounded-lg border border-gray-200 overflow-hidden focus-within:border-[#8B1E1E]">
+                  <div className="flex items-center rounded-lg border border-gray-200 overflow-hidden focus-within:border-[#00b4d8]">
                     <span className="px-3 py-3 bg-gray-50 text-gray-400 text-sm border-r border-gray-200">/blog/</span>
                     <input type="text" value={formData.slug}
                       onChange={(e) => setFormData({ ...formData, slug: generateSlug(e.target.value) })}
@@ -409,7 +409,7 @@ export default function NewPost() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Focus Keyword</label>
                   <input type="text" value={formData.focus_keyword}
                     onChange={(e) => setFormData({ ...formData, focus_keyword: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                     placeholder="e.g. healthy lifestyle tips" />
                   {formData.focus_keyword && wordCount > 0 && (
                     <p className={`mt-1 text-xs ${ kwDensity >= 0.5 && kwDensity <= 2.5 ? 'text-green-600' : 'text-yellow-600' }`}>
@@ -428,7 +428,7 @@ export default function NewPost() {
                   </div>
                   <input type="text" value={formData.meta_title}
                     onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                     placeholder="SEO title (defaults to post title)" />
                 </div>
 
@@ -443,7 +443,7 @@ export default function NewPost() {
                   <textarea value={formData.meta_description}
                     onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
                     rows={3}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none resize-none text-sm text-gray-900 bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none resize-none text-sm text-gray-900 bg-white"
                     placeholder="Describe your post for search engines (120-160 chars)..." />
                 </div>
 
@@ -452,7 +452,7 @@ export default function NewPost() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Meta Keywords</label>
                   <input type="text" value={formData.meta_keywords}
                     onChange={(e) => setFormData({ ...formData, meta_keywords: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                     placeholder="keyword1, keyword2, keyword3" />
                 </div>
 
@@ -542,7 +542,7 @@ export default function NewPost() {
                     </label>
                     <input type="text" value={formData.og_title}
                       onChange={(e) => setFormData({ ...formData, og_title: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                       placeholder={formData.meta_title || formData.title || 'Social share title...'} />
                   </div>
 
@@ -551,7 +551,7 @@ export default function NewPost() {
                     <textarea value={formData.og_description}
                       onChange={(e) => setFormData({ ...formData, og_description: e.target.value })}
                       rows={2}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none resize-none text-sm text-gray-900 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none resize-none text-sm text-gray-900 bg-white"
                       placeholder={formData.meta_description || 'Description shown when shared on social...'} />
                   </div>
 
@@ -562,7 +562,7 @@ export default function NewPost() {
                     <div className="flex gap-2">
                       <input type="url" value={formData.og_image}
                         onChange={(e) => setFormData({ ...formData, og_image: e.target.value })}
-                        className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                        className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                         placeholder="https://... or leave blank to use Featured Image" />
                     </div>
                   </div>
@@ -618,7 +618,7 @@ export default function NewPost() {
           <button
             type="submit"
             disabled={loading || !formData.title || !formData.content}
-            className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? <><div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />Saving...</> : <><FiSave className="w-5 h-5 mr-2" />Create Post</>}
           </button>

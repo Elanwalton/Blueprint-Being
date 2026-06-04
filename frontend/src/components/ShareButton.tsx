@@ -63,7 +63,7 @@ export default function ShareButton({ title, url }: ShareButtonProps) {
     <div className="relative inline-block">
       <button
         onClick={handleShare}
-        className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-[#8B1E1E] hover:text-[#8B1E1E] transition-all font-medium text-sm"
+        className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:border-[#00b4d8] hover:text-[#00b4d8] transition-all font-medium text-sm"
       >
         <FiShare2 className="w-4 h-4" />
         <span>Share</span>

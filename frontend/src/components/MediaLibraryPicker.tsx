@@ -51,7 +51,7 @@ export default function MediaLibraryPicker({ onSelect, onClose }: MediaLibraryPi
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center">
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center">
               <FiImage className="w-5 h-5 text-white" />
             </div>
             <h2 className="text-xl font-display font-bold text-gray-900">Media Library</h2>
@@ -68,7 +68,7 @@ export default function MediaLibraryPicker({ onSelect, onClose }: MediaLibraryPi
         <div className="flex-1 overflow-y-auto p-6">
           {loading ? (
             <div className="flex items-center justify-center h-48">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]" />
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]" />
             </div>
           ) : media.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-48 text-gray-400">
@@ -86,7 +86,7 @@ export default function MediaLibraryPicker({ onSelect, onClose }: MediaLibraryPi
                     onClick={() => setSelected(file.url)}
                     className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200 focus:outline-none ${
                       isSelected
-                        ? 'border-[#8B1E1E] ring-2 ring-[#8B1E1E]/30 scale-[0.98]'
+                        ? 'border-[#00b4d8] ring-2 ring-[#00b4d8]/30 scale-[0.98]'
                         : 'border-transparent hover:border-gray-300'
                     }`}
                   >
@@ -96,8 +96,8 @@ export default function MediaLibraryPicker({ onSelect, onClose }: MediaLibraryPi
                       className="w-full h-full object-cover"
                     />
                     {isSelected && (
-                      <div className="absolute inset-0 bg-[#8B1E1E]/20 flex items-center justify-center">
-                        <div className="w-8 h-8 rounded-full bg-[#8B1E1E] flex items-center justify-center shadow-lg">
+                      <div className="absolute inset-0 bg-[#00b4d8]/20 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-[#00b4d8] flex items-center justify-center shadow-lg">
                           <FiCheck className="w-4 h-4 text-white" />
                         </div>
                       </div>
@@ -129,7 +129,7 @@ export default function MediaLibraryPicker({ onSelect, onClose }: MediaLibraryPi
               type="button"
               disabled={!selected}
               onClick={handleConfirm}
-              className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white text-sm font-medium hover:shadow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+              className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white text-sm font-medium hover:shadow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed"
             >
               Use Selected Image
             </button>

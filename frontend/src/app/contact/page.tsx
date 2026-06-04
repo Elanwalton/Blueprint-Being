@@ -32,10 +32,10 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen pt-20 pb-16">
       {/* Header */}
-      <section className="relative bg-gradient-to-br from-[#8B1E1E] via-[#A73030] to-[#C74D4D] text-white py-20 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#00b4d8] via-[#0096c7] to-[#0077b6] text-white py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 bg-white rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-0 right-0 w-60 h-60 bg-[#ffffff] rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-0 left-0 w-60 h-60 bg-[#ffffff] rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl mb-6 backdrop-blur-sm">
@@ -55,7 +55,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Contact Info Cards */}
           <div className="card-premium p-6 text-center animate-fadeIn">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] rounded-xl mb-4">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#00b4d8] to-[#0077b6] rounded-xl mb-4">
               <FiMail className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-lg font-display font-bold text-gray-900 mb-2">Email Us</h3>
@@ -63,7 +63,7 @@ export default function ContactPage() {
           </div>
 
           <div className="card-premium p-6 text-center animate-fadeIn" style={{ animationDelay: '0.1s' }}>
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] rounded-xl mb-4">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#00b4d8] to-[#0077b6] rounded-xl mb-4">
               <FiMapPin className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-lg font-display font-bold text-gray-900 mb-2">Visit Us</h3>
@@ -71,7 +71,7 @@ export default function ContactPage() {
           </div>
 
           <div className="card-premium p-6 text-center animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] rounded-xl mb-4">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#00b4d8] to-[#0077b6] rounded-xl mb-4">
               <FiPhone className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-lg font-display font-bold text-gray-900 mb-2">Call Us</h3>
@@ -92,7 +92,7 @@ export default function ContactPage() {
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white hover:shadow-xl hover:shadow-[#8B1E1E]/30 transition-all duration-300 font-medium transform hover:-translate-y-0.5"
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white hover:shadow-xl hover:shadow-[#00b4d8]/30 transition-all duration-300 font-medium transform hover:-translate-y-0.5"
               >
                 Send Another Message
               </button>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full px-8 py-4 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white hover:shadow-2xl hover:shadow-[#8B1E1E]/40 transition-all duration-300 font-medium transform hover:-translate-y-1 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full px-8 py-4 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white hover:shadow-2xl hover:shadow-[#00b4d8]/40 transition-all duration-300 font-medium transform hover:-translate-y-1 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
                   <span>{loading ? 'Sending...' : 'Send Message'}</span>
                   <FiSend className="w-5 h-5" />

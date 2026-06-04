@@ -67,7 +67,7 @@ export default function Subscribers() {
         </div>
         <button
           onClick={handleExport}
-          className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all"
+          className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all"
         >
           <FiDownload className="w-5 h-5 mr-2" />
           Export CSV
@@ -78,7 +78,7 @@ export default function Subscribers() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
               <FiMail className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -124,7 +124,7 @@ export default function Subscribers() {
           placeholder="Search subscribers..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none"
+          className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none"
         />
       </div>
 
@@ -132,7 +132,7 @@ export default function Subscribers() {
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]"></div>
           </div>
         ) : (
           <div className="overflow-x-auto">

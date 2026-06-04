@@ -6,9 +6,9 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen pt-20 pb-16">
       {/* Header */}
-      <section className="relative bg-gradient-to-br from-[#8B1E1E] via-[#A73030] to-[#C74D4D] text-white py-16 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#00b4d8] via-[#0096c7] to-[#0077b6] text-white py-16 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl animate-float" />
+          <div className="absolute top-0 left-0 w-40 h-40 bg-[#ffffff] rounded-full blur-3xl animate-float" />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4 backdrop-blur-sm">
@@ -97,7 +97,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-display font-bold mb-4 mt-8">Contact Information</h2>
             <p className="text-gray-700">
               If you have any questions about these Terms of Service, please contact us at{' '}
-              <a href="mailto:legal@blog.com" className="text-[#8B1E1E] hover:text-[#C74D4D] font-medium">
+              <a href="mailto:legal@blog.com" className="text-[#00b4d8] hover:text-[#0077b6] font-medium">
                 legal@blog.com
               </a>
             </p>

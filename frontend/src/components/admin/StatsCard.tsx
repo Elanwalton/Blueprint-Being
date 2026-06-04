@@ -12,7 +12,7 @@ export default function StatsCard({ title, value, change, icon: Icon, color = 'b
   const colorClasses = {
     blue: 'from-blue-500 to-blue-600',
     green: 'from-green-500 to-green-600',
-    purple: 'from-purple-500 to-purple-600',
+    purple: 'from-blue-500 to-purple-600',
     orange: 'from-orange-500 to-orange-600',
   };
 

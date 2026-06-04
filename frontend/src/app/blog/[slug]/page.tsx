@@ -68,7 +68,7 @@ export default function SinglePostWithSlug() {
         <p className="text-gray-600 mb-8">{error || "The article you're looking for doesn't exist."}</p>
         <Link
           href="/blog"
-          className="px-8 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white hover:shadow-lg transition-all font-medium flex items-center space-x-2"
+          className="px-8 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white hover:shadow-lg transition-all font-medium flex items-center space-x-2"
         >
           <FiArrowLeft />
           <span>Back to Blog</span>
@@ -143,13 +143,13 @@ export default function SinglePostWithSlug() {
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb UI */}
           <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-1 text-sm text-gray-400 mb-6">
-            <Link href="/" className="hover:text-[#8B1E1E] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#00b4d8] transition-colors">Home</Link>
             <FiChevronRight className="w-3.5 h-3.5 flex-shrink-0" />
-            <Link href="/blog" className="hover:text-[#8B1E1E] transition-colors">Blog</Link>
+            <Link href="/blog" className="hover:text-[#00b4d8] transition-colors">Blog</Link>
             {post.category && (
               <>
                 <FiChevronRight className="w-3.5 h-3.5 flex-shrink-0" />
-                <Link href={`/blog?category=${post.category.slug}`} className="hover:text-[#8B1E1E] transition-colors">
+                <Link href={`/blog?category=${post.category.slug}`} className="hover:text-[#00b4d8] transition-colors">
                   {post.category.name}
                 </Link>
               </>
@@ -171,7 +171,7 @@ export default function SinglePostWithSlug() {
           <div className="flex flex-wrap items-center justify-between gap-6 text-gray-500 mb-12">
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center text-white font-bold">
                   {post.author.name[0]}
                 </div>
                 <span className="font-medium text-gray-900">{post.author.name}</span>
@@ -207,7 +207,7 @@ export default function SinglePostWithSlug() {
       {/* Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
-          className="prose prose-lg md:prose-xl max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-[#8B1E1E] prose-img:rounded-2xl"
+          className="prose prose-lg md:prose-xl max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-[#00b4d8] prose-img:rounded-2xl"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
         
@@ -217,7 +217,7 @@ export default function SinglePostWithSlug() {
             <div className="flex flex-wrap gap-2">
               {post.tags.map(tag => (
                 <span key={tag.id} className="inline-flex items-center px-4 py-2 rounded-full bg-gray-50 text-gray-600 text-sm hover:bg-gray-100 transition-colors cursor-default">
-                  <FiTag className="w-4 h-4 mr-2 text-[#8B1E1E]" />
+                  <FiTag className="w-4 h-4 mr-2 text-[#00b4d8]" />
                   {tag.name}
                 </span>
               ))}
@@ -257,7 +257,7 @@ export default function SinglePostWithSlug() {
                     </div>
                   )}
                   <div className="p-6">
-                    <h3 className="text-xl font-display font-bold mb-2 group-hover:text-[#8B1E1E] transition-colors line-clamp-2">
+                    <h3 className="text-xl font-display font-bold mb-2 group-hover:text-[#00b4d8] transition-colors line-clamp-2">
                       {relatedPost.title}
                     </h3>
                     <p className="text-gray-600 text-sm line-clamp-2 mb-4">{relatedPost.excerpt}</p>

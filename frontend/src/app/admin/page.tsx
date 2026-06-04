@@ -51,7 +51,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B1E1E]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00b4d8]"></div>
       </div>
     );
   }
@@ -98,7 +98,7 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-display font-bold text-gray-900">Recent Posts</h2>
           <Link
             href="/admin/posts"
-            className="text-sm text-[#8B1E1E] hover:underline font-medium"
+            className="text-sm text-[#00b4d8] hover:underline font-medium"
           >
             View All
           </Link>
@@ -119,7 +119,7 @@ export default function AdminDashboard() {
                 </div>
                 <Link
                   href={`/admin/posts/edit/${post.id}`}
-                  className="px-4 py-2 text-sm text-[#8B1E1E] hover:bg-[#8B1E1E] hover:text-white rounded-lg transition-colors border border-[#8B1E1E]"
+                  className="px-4 py-2 text-sm text-[#00b4d8] hover:bg-[#00b4d8] hover:text-white rounded-lg transition-colors border border-[#00b4d8]"
                 >
                   Edit
                 </Link>
@@ -131,7 +131,7 @@ export default function AdminDashboard() {
             <p>No posts yet. Create your first post!</p>
             <Link
               href="/admin/posts/new"
-              className="inline-block mt-4 px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all"
+              className="inline-block mt-4 px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all"
             >
               Create Post
             </Link>
@@ -143,7 +143,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         <Link
           href="/admin/posts/new"
-          className="bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] text-white rounded-xl p-6 hover:shadow-xl transition-all"
+          className="bg-gradient-to-br from-[#00b4d8] to-[#0077b6] text-white rounded-xl p-6 hover:shadow-xl transition-all"
         >
           <FiFileText className="w-8 h-8 mb-3" />
           <h3 className="text-lg font-bold mb-1">New Post</h3>
@@ -161,7 +161,7 @@ export default function AdminDashboard() {
 
         <Link
           href="/admin/analytics"
-          className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl p-6 hover:shadow-xl transition-all"
+          className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-xl p-6 hover:shadow-xl transition-all"
         >
           <FiEye className="w-8 h-8 mb-3" />
           <h3 className="text-lg font-bold mb-1">View Analytics</h3>

@@ -30,7 +30,7 @@ export default function Analytics() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B1E1E]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00b4d8]"></div>
       </div>
     );
   }
@@ -85,7 +85,7 @@ export default function Analytics() {
               className="flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors"
             >
               <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center text-white font-bold">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center text-white font-bold">
                   {index + 1}
                 </div>
                 <div>

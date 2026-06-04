@@ -53,14 +53,14 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="p-6 border-b border-gray-200">
         <Link href="/admin" className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D]" />
-          <span className="text-xl font-display font-bold bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] bg-clip-text text-transparent">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00b4d8] to-[#0077b6]" />
+          <span className="text-xl font-display font-bold bg-gradient-to-r from-[#00b4d8] to-[#0077b6] bg-clip-text text-transparent">
             Admin Panel
           </span>
         </Link>
         {username && (
           <div className="mt-3 flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
               {username[0]?.toUpperCase()}
             </div>
             <div className="overflow-hidden">
@@ -83,7 +83,7 @@ export default function Sidebar() {
               href={item.href}
               className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${
                 isActive
-                  ? 'bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white shadow-md'
+                  ? 'bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white shadow-md'
                   : 'text-gray-700 hover:bg-gray-50'
               }`}
             >

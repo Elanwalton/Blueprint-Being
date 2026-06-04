@@ -62,7 +62,7 @@ export default function UserTable({ users, onDelete, onUpdateRole, currentUserId
                       className="w-10 h-10 rounded-full object-cover"
                     />
                   ) : (
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center text-white font-bold">
                       {user.username.charAt(0).toUpperCase()}
                     </div>
                   )}
@@ -77,7 +77,7 @@ export default function UserTable({ users, onDelete, onUpdateRole, currentUserId
                   <select
                     value={selectedRole}
                     onChange={(e) => setSelectedRole(e.target.value)}
-                    className="px-2 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]/20 focus:border-[#8B1E1E] text-gray-900 bg-white"
+                    className="px-2 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#00b4d8]/20 focus:border-[#00b4d8] text-gray-900 bg-white"
                   >
                     <option value="admin">Admin</option>
                     <option value="editor">Editor</option>
@@ -91,7 +91,7 @@ export default function UserTable({ users, onDelete, onUpdateRole, currentUserId
                       user.role === 'admin'
                         ? 'bg-purple-100 text-purple-800'
                         : user.role === 'editor'
-                        ? 'bg-pink-100 text-[#8B1E1E]'
+                        ? 'bg-cyan-100 text-[#00b4d8]'
                         : user.role === 'author'
                         ? 'bg-blue-100 text-blue-800'
                         : user.role === 'contributor'

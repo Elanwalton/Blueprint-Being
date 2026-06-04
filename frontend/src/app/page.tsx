@@ -32,17 +32,22 @@ export default function Home() {
   const secondaryFeatured = featuredPosts.slice(1, 4);
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-gray-900 font-sans selection:bg-[#8B1E1E] selection:text-white">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#000B18] text-gray-900 dark:text-gray-100 font-sans selection:bg-[#00b4d8] selection:text-white transition-colors duration-300">
       {/* ─── EDITORIAL HERO ─── */}
       <section className="pt-12 md:pt-20 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 animate-fadeIn">
-          <p className="text-[#8B1E1E] font-medium tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4">Blueprint Being</p>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black tracking-tight text-gray-900 mb-4 md:mb-6 leading-[1.1] md:leading-tight">
-            Ideas that <span className="italic font-light text-gray-600">shape</span> the future.
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light px-4 sm:px-0">
-            A curated space for deep thinkers, creators, and leaders. Explore perspectives on life, business, and continuous growth.
-          </p>
+        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-16 animate-fadeIn">
+          {/* Text wrapped in glass card */}
+          <div className="mx-auto max-w-3xl bg-white dark:bg-[#000B18]/70 backdrop-blur-md rounded-2xl px-8 py-12 border border-gray-100 dark:border-white/10 shadow-2xl shadow-gray-200/50 dark:shadow-none">
+            <p className="text-[#00b4d8] font-medium tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4">
+              Blueprint Being
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black tracking-tight text-gray-900 dark:text-white mb-4 md:mb-6 leading-[1.1] md:leading-tight">
+              Ideas that <span className="italic font-light text-[#00b4d8]">shape</span> the future.
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-white/85 leading-relaxed font-light px-4 sm:px-0">
+              A curated space for deep thinkers, creators, and leaders. Explore perspectives on life, business, and continuous growth.
+            </p>
+          </div>
         </div>
 
         {/* Editorial Grid */}
@@ -62,7 +67,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest rounded-sm mb-4">
+                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-white/20">
                     {mainFeatured.category?.name || 'Featured'}
                   </span>
                   <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 leading-tight group-hover:text-gray-200 transition-colors">
@@ -95,8 +100,8 @@ export default function Home() {
 
           {/* Sidebar Posts */}
           <div className="lg:col-span-4 flex flex-col gap-8">
-            <div className="border-b border-gray-200 pb-2">
-              <h3 className="font-display font-bold text-2xl text-gray-900">Trending Now</h3>
+            <div className="border-b border-gray-200 dark:border-gray-700 pb-2">
+              <h3 className="font-display font-bold text-2xl text-gray-900 dark:text-white">Trending Now</h3>
             </div>
             
             {loading ? (
@@ -121,10 +126,10 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[#8B1E1E] text-xs font-bold uppercase tracking-wider mb-1">
+                    <span className="text-[#00b4d8] text-xs font-bold uppercase tracking-wider mb-1">
                       {post.category?.name || 'Article'}
                     </span>
-                    <h4 className="font-display font-bold text-lg leading-snug group-hover:text-[#8B1E1E] transition-colors line-clamp-3">
+                    <h4 className="font-display font-bold text-lg leading-snug group-hover:text-[#00b4d8] transition-colors line-clamp-3">
                       {post.title}
                     </h4>
                     <span className="text-gray-500 text-xs mt-2 font-medium">
@@ -147,7 +152,7 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-4xl font-display font-bold text-gray-900">Latest Reads</h2>
-          <Link href="/blog" className="flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-[#8B1E1E] transition-colors group">
+          <Link href="/blog" className="flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-[#00b4d8] transition-colors group">
             All Articles <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -174,11 +179,11 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
-                  <span className="text-[#8B1E1E]">{post.category?.name || 'Editorial'}</span>
+                  <span className="text-[#00b4d8]">{post.category?.name || 'Editorial'}</span>
                   <span className="w-1 h-1 rounded-full bg-gray-300" />
                   <span>{new Date(post.publish_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 </div>
-                <h3 className="text-2xl font-display font-bold text-gray-900 mb-3 leading-snug group-hover:text-[#8B1E1E] transition-colors">
+                <h3 className="text-2xl font-display font-bold text-gray-900 mb-3 leading-snug group-hover:text-[#00b4d8] transition-colors">
                   {post.title}
                 </h3>
                 <p className="text-gray-600 font-light leading-relaxed line-clamp-3 mb-4">
@@ -197,42 +202,42 @@ export default function Home() {
       </section>
 
       {/* ─── ELEGANT NEWSLETTER ─── */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#000B18] border-t border-gray-100 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-[#FDFBF7] rounded-[2rem] p-8 sm:p-12 md:p-16 border border-gray-100 shadow-sm text-center relative overflow-hidden">
+          <div className="bg-[#f8fafc] dark:bg-[#0a1628] rounded-[2rem] p-8 sm:p-12 md:p-16 border border-gray-100 dark:border-gray-700 shadow-sm text-center relative overflow-hidden transition-colors duration-300">
             {/* Decorative background element */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#FCE9E9] to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#FFE5E5] to-transparent rounded-full blur-3xl opacity-60 translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#e0fbfc] dark:from-[#00b4d8]/10 to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#c2f7fc] dark:from-[#0077b6]/10 to-transparent rounded-full blur-3xl opacity-60 translate-y-1/2 -translate-x-1/2" />
             
             <div className="relative z-10">
-              <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white shadow-sm mb-8 border border-gray-100 transform -rotate-3">
-                <FiBookOpen className="w-6 h-6 text-[#8B1E1E]" />
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white dark:bg-[#0f2040] shadow-sm mb-8 border border-gray-100 dark:border-gray-700 transform -rotate-3">
+                <FiBookOpen className="w-6 h-6 text-[#00b4d8]" />
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
                 The Blueprint Dispatch
               </h2>
-              <p className="text-lg text-gray-500 font-light mb-10 leading-relaxed max-w-xl mx-auto">
+              <p className="text-lg text-gray-500 dark:text-gray-400 font-light mb-10 leading-relaxed max-w-xl mx-auto">
                 Join thousands of readers receiving our finest essays, curation, and insights every Sunday morning.
               </p>
 
               <form className="max-w-md mx-auto relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#8B1E1E]/20 to-[#C74D4D]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-500" />
-                <div className="relative flex flex-col sm:flex-row bg-white rounded-2xl sm:rounded-full shadow-sm border border-gray-200 focus-within:border-[#8B1E1E]/50 focus-within:ring-4 focus-within:ring-[#8B1E1E]/10 transition-all overflow-hidden p-1.5">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00b4d8]/20 to-[#0077b6]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-500" />
+                <div className="relative flex flex-col sm:flex-row bg-white dark:bg-[#0f2040] rounded-2xl sm:rounded-full shadow-sm border border-gray-200 dark:border-gray-700 focus-within:border-[#00b4d8]/50 focus-within:ring-4 focus-within:ring-[#00b4d8]/10 transition-all overflow-hidden p-1.5">
                   <input
                     type="email"
                     placeholder="Enter your email address..."
-                    className="flex-1 px-6 py-4 sm:py-3 bg-transparent border-0 focus:ring-0 focus:border-transparent outline-none text-gray-900 placeholder-gray-400 text-sm w-full"
+                    className="flex-1 px-6 py-4 sm:py-3 bg-transparent border-0 focus:ring-0 focus:border-transparent outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 text-sm w-full"
                     required
                   />
                   <button
                     type="submit"
-                    className="mt-2 sm:mt-0 w-full sm:w-auto px-8 py-4 sm:py-3 bg-[#8B1E1E] hover:bg-[#6B1515] text-white font-medium text-sm rounded-xl sm:rounded-full transition-colors duration-300"
+                    className="mt-2 sm:mt-0 w-full sm:w-auto px-8 py-4 sm:py-3 bg-[#00b4d8] hover:bg-[#023e8a] text-white font-medium text-sm rounded-xl sm:rounded-full transition-colors duration-300"
                   >
                     Subscribe
                   </button>
                 </div>
               </form>
-              <p className="text-xs text-gray-400 mt-6 uppercase tracking-widest font-medium">No spam. Unsubscribe anytime.</p>
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-6 uppercase tracking-widest font-medium">No spam. Unsubscribe anytime.</p>
             </div>
           </div>
         </div>

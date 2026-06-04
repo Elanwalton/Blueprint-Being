@@ -45,16 +45,16 @@ export default function CategoryArchive() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50">
       {/* Header */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 mb-6">
-            <FiFolder className="w-4 h-4 text-[#8B1E1E]" />
+            <FiFolder className="w-4 h-4 text-[#00b4d8]" />
             <span className="text-sm font-medium text-gray-700">Category</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-[#00b4d8] to-[#0077b6] bg-clip-text text-transparent">
             {categoryName || slug}
           </h1>
           
@@ -69,7 +69,7 @@ export default function CategoryArchive() {
         <div className="max-w-7xl mx-auto">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B1E1E]"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00b4d8]"></div>
             </div>
           ) : posts.length > 0 ? (
             <>
@@ -101,7 +101,7 @@ export default function CategoryArchive() {
                         </span>
                       </div>
 
-                      <h2 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-[#8B1E1E] transition-colors">
+                      <h2 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-[#00b4d8] transition-colors">
                         {post.title}
                       </h2>
 
@@ -111,7 +111,7 @@ export default function CategoryArchive() {
 
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="inline-flex items-center text-[#8B1E1E] font-medium hover:gap-2 transition-all"
+                        className="inline-flex items-center text-[#00b4d8] font-medium hover:gap-2 transition-all"
                       >
                         Read More
                         <FiArrowRight className="w-4 h-4 ml-1" />
@@ -151,7 +151,7 @@ export default function CategoryArchive() {
               <p className="text-xl text-gray-600">No posts found in this category</p>
               <Link
                 href="/blog"
-                className="inline-block mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all"
+                className="inline-block mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all"
               >
                 Browse All Posts
               </Link>

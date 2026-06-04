@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased min-h-screen bg-gradient-to-br from-gray-50 via-white to-pink-50">
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+      <body className="antialiased min-h-screen pt-24 bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

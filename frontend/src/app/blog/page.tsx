@@ -98,29 +98,38 @@ export default function BlogPage() {
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="text-center max-w-4xl mx-auto mb-16">
-        <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 animate-fadeIn text-gray-900">
+        <h1 className="text-5xl md:text-6xl font-display font-bold mb-6 animate-fadeIn text-gray-900 dark:text-white">
           Our Blog
         </h1>
-        <p className="text-xl text-gray-600 mb-12 animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+        <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 animate-fadeIn" style={{ animationDelay: '0.1s' }}>
           Discover the latest stories, ideas, and expertise from our team using a health-focused approach.
         </p>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="relative max-w-2xl mx-auto mb-12 animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-          <FiSearch className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
-          <input
-            type="text"
-            name="search"
-            defaultValue={searchQuery}
-            placeholder="Search articles..."
-            className="w-full pl-16 pr-6 py-4 rounded-2xl border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none shadow-lg shadow-gray-100 transition-all text-lg"
-          />
+        <form onSubmit={handleSearch} className="relative max-w-2xl mx-auto mb-12 animate-fadeIn group" style={{ animationDelay: '0.2s' }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00b4d8]/20 to-[#0077b6]/20 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-500 dark:group-hover:opacity-40" />
+          <div className="relative flex items-center bg-white dark:bg-[#0f2040] rounded-2xl border border-gray-200 dark:border-gray-700 focus-within:border-[#00b4d8]/50 focus-within:ring-4 focus-within:ring-[#00b4d8]/10 transition-all shadow-lg shadow-gray-100 dark:shadow-none p-1.5 overflow-hidden">
+            <FiSearch className="ml-5 text-gray-400 dark:text-gray-500 w-6 h-6 shrink-0" />
+            <input
+              type="text"
+              name="search"
+              defaultValue={searchQuery}
+              placeholder="Search articles..."
+              className="flex-1 bg-transparent border-0 focus:ring-0 outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-lg px-4 py-3"
+            />
+            <button 
+              type="submit" 
+              className="px-6 py-3 bg-[#00b4d8] hover:bg-[#023e8a] text-white font-medium rounded-xl transition-colors duration-300 shadow-md shrink-0"
+            >
+              Search
+            </button>
+          </div>
         </form>
       </div>
 
       <div className="max-w-7xl mx-auto">
         {/* Category Filter */}
-        <div className="glass-strong rounded-xl shadow-xl p-6 mb-12 overflow-x-auto">
+        <div className="glass-strong dark:bg-[#0a1628] rounded-xl shadow-xl dark:shadow-none border border-transparent dark:border-gray-800 p-6 mb-12 overflow-x-auto">
           <div className="flex flex-nowrap md:flex-wrap gap-4 items-center justify-start md:justify-center min-w-max md:min-w-0">
             {categories.map((cat) => (
               <button
@@ -128,8 +137,8 @@ export default function BlogPage() {
                 onClick={() => handleCategoryChange(cat.slug)}
                 className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap ${
                   (category === cat.slug)
-                    ? 'bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white shadow-lg scale-105'
-                    : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-[#8B1E1E] border border-gray-100'
+                    ? 'bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white shadow-lg shadow-[#00b4d8]/20 scale-105'
+                    : 'bg-white dark:bg-[#0f2040] text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#1a2c50] hover:text-[#00b4d8] dark:hover:text-[#00E5FF] border border-gray-100 dark:border-gray-700'
                 }`}
               >
                 {cat.name}
@@ -157,8 +166,8 @@ export default function BlogPage() {
         {/* No Results */}
         {!loading && posts.length === 0 && (
           <div className="text-center py-20">
-            <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-pink-100 to-purple-100 rounded-full flex items-center justify-center">
-              <FiSearch className="w-12 h-12 text-pink-600" />
+            <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-full flex items-center justify-center">
+              <FiSearch className="w-12 h-12 text-cyan-600" />
             </div>
             <h3 className="text-2xl font-display font-bold mb-2">No posts found</h3>
             <p className="text-gray-600 mb-6">
@@ -168,7 +177,7 @@ export default function BlogPage() {
               onClick={() => {
                 router.push('/blog');
               }}
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white hover:shadow-xl hover:shadow-[#8B1E1E]/30 transition-all duration-300 font-medium transform hover:-translate-y-0.5"
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white hover:shadow-xl hover:shadow-[#00b4d8]/30 transition-all duration-300 font-medium transform hover:-translate-y-0.5"
             >
               Clear Filters
             </button>
@@ -206,7 +215,7 @@ export default function BlogPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-[#8B1E1E] transition-colors line-clamp-2">
+                  <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-[#00b4d8] transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   
@@ -216,7 +225,7 @@ export default function BlogPage() {
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-50 mt-auto">
                     <div className="flex items-center space-x-2">
-                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center text-white text-xs font-bold">
+                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center text-white text-xs font-bold">
                         {post.author.name[0]}
                       </div>
                       <span className="text-sm font-medium text-gray-900">{post.author.name}</span>
@@ -240,7 +249,7 @@ export default function BlogPage() {
               className={`p-3 rounded-xl border ${
                 page === 1
                   ? 'border-gray-100 text-gray-300 cursor-not-allowed'
-                  : 'border-gray-200 text-gray-600 hover:border-[#8B1E1E] hover:text-[#8B1E1E] shadow-sm hover:shadow-md'
+                  : 'border-gray-200 text-gray-600 hover:border-[#00b4d8] hover:text-[#00b4d8] shadow-sm hover:shadow-md'
               } transition-all`}
             >
               <FiChevronLeft className="w-5 h-5" />
@@ -258,7 +267,7 @@ export default function BlogPage() {
               className={`p-3 rounded-xl border ${
                 page === totalPages
                   ? 'border-gray-100 text-gray-300 cursor-not-allowed'
-                  : 'border-gray-200 text-gray-600 hover:border-[#8B1E1E] hover:text-[#8B1E1E] shadow-sm hover:shadow-md'
+                  : 'border-gray-200 text-gray-600 hover:border-[#00b4d8] hover:text-[#00b4d8] shadow-sm hover:shadow-md'
               } transition-all`}
             >
               <FiChevronRight className="w-5 h-5" />

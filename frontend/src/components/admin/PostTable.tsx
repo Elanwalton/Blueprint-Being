@@ -48,7 +48,7 @@ export default function PostTable({ posts, onDelete, activeFilter = 'all', onFil
               onClick={() => onFilterChange(s)}
               className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all capitalize ${
                 activeFilter === s
-                  ? 'bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white shadow-sm'
+                  ? 'bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white shadow-sm'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
@@ -101,7 +101,7 @@ export default function PostTable({ posts, onDelete, activeFilter = 'all', onFil
                         <FiEye className="w-5 h-5" />
                       </Link>
                     )}
-                    <Link href={`/admin/posts/edit/${post.id}`} className="text-[#8B1E1E] hover:text-[#C74D4D] transition-colors" title="Edit">
+                    <Link href={`/admin/posts/edit/${post.id}`} className="text-[#00b4d8] hover:text-[#0077b6] transition-colors" title="Edit">
                       <FiEdit className="w-5 h-5" />
                     </Link>
                     <button

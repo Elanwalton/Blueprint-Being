@@ -71,7 +71,7 @@ export default function NewUser() {
                 value={formData.username}
                 onChange={handleChange}
                 required
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-gray-900 bg-white"
+                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-gray-900 bg-white"
                 placeholder="Neema "
               />
             </div>
@@ -89,7 +89,7 @@ export default function NewUser() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-gray-900 bg-white"
+                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-gray-900 bg-white"
                 placeholder="neema@example.com"
               />
             </div>
@@ -108,7 +108,7 @@ export default function NewUser() {
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-gray-900 bg-white"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-gray-900 bg-white"
                   placeholder="••••••••"
                 />
               </div>
@@ -126,7 +126,7 @@ export default function NewUser() {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   required
-                  className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-gray-900 bg-white"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-gray-900 bg-white"
                   placeholder="••••••••"
                 />
               </div>
@@ -143,7 +143,7 @@ export default function NewUser() {
                 name="role"
                 value={formData.role}
                 onChange={handleChange}
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none appearance-none text-gray-900 bg-white"
+                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none appearance-none text-gray-900 bg-white"
               >
                 <option value="admin">Administrator</option>
                 <option value="editor">Editor</option>
@@ -161,7 +161,7 @@ export default function NewUser() {
             <button
               type="submit"
               disabled={loading}
-              className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <FiSave className="w-5 h-5 mr-2" />
               {loading ? 'Creating User...' : 'Create User'}

@@ -102,7 +102,7 @@ export default function CommentModeration() {
               onClick={() => setFilter(status)}
               className={`relative px-4 py-2 rounded-lg font-medium transition-all capitalize ${
                 filter === status
-                  ? 'bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white'
+                  ? 'bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white'
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -130,7 +130,7 @@ export default function CommentModeration() {
       <div className="space-y-4">
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]" />
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]" />
           </div>
         ) : comments.length > 0 ? (
           comments.map((comment) => (

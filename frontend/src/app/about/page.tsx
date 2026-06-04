@@ -5,20 +5,32 @@ import { useState } from 'react';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-20 pb-16">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#8B1E1E] via-[#A73030] to-[#C74D4D] text-white py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 bg-white rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+    <div className="min-h-screen pt-8 pb-16 bg-[var(--background)]">
+      {/* ── HERO ── */}
+      <section className="
+        relative overflow-hidden
+        mx-4 sm:mx-6 lg:mx-8
+        rounded-3xl
+        bg-gradient-to-br from-[#00b4d8] via-[#0096c7] to-[#0077b6]
+        text-white py-20 px-4
+        shadow-2xl shadow-[#00b4d8]/20 dark:shadow-[#000B18]/60
+        border border-[#00b4d8]/20 dark:border-cyan-800/40
+      ">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 right-0 w-60 h-60 bg-[#ffffff] rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-0 left-0 w-60 h-60 bg-[#ffffff] rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
         </div>
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">
-            About Us
-          </h1>
-          <p className="text-xl text-white/90">
-            Sharing stories, insights, and ideas that inspire and inform
-          </p>
+          {/* Inner text card */}
+          <div className="mx-auto max-w-xl bg-white/90 dark:bg-[#000B18]/70 backdrop-blur-md rounded-2xl px-8 py-8 border border-white/20 dark:border-white/10 shadow-2xl">
+            <h1 className="text-5xl md:text-6xl font-display font-bold mb-4 text-gray-900 dark:text-white">
+              About Us
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-white/85 leading-relaxed">
+              Sharing stories, insights, and ideas that inspire and inform
+            </p>
+          </div>
         </div>
       </section>
 
@@ -68,12 +80,12 @@ export default function AboutPage() {
               { name: 'Neema', role: 'Content Strategist', bio: 'Bringing creative ideas to life' },
             ].map((member, index) => (
               <div key={index} className="flex items-start space-x-4 animate-fadeIn" style={{ animationDelay: `${index * 0.15}s` }}>
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center flex-shrink-0">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-2xl font-bold">{member.name[0]}</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-display font-bold text-gray-900">{member.name}</h3>
-                  <p className="text-[#8B1E1E] text-sm mb-2">{member.role}</p>
+                  <p className="text-[#00b4d8] text-sm mb-2">{member.role}</p>
                   <p className="text-gray-600">{member.bio}</p>
                 </div>
               </div>
@@ -86,21 +98,21 @@ export default function AboutPage() {
           <h2 className="text-3xl font-display font-bold text-gray-900 mb-6 text-center">Get in Touch</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] rounded-xl mb-3">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#00b4d8] to-[#0077b6] rounded-xl mb-3">
                 <FiMail className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-900 mb-1">Email</h3>
               <p className="text-gray-600 text-sm">hello@blog.com</p>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] rounded-xl mb-3">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#00b4d8] to-[#0077b6] rounded-xl mb-3">
                 <FiMapPin className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-900 mb-1">Location</h3>
               <p className="text-gray-600 text-sm">Nairobi, Kenya</p>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] rounded-xl mb-3">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#00b4d8] to-[#0077b6] rounded-xl mb-3">
                 <FiSend className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-900 mb-1">Social</h3>

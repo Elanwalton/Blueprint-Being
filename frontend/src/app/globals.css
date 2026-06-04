@@ -5,22 +5,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #FCE9E9;
-  --foreground: #511010;
-  --primary: #8B1E1E;
-  --secondary: #C74D4D;
-  --accent: #C74D4D;
+  --background: #F1F5F9;
+  --foreground: #000B18;
+  --primary: #00E5FF;
+  --secondary: #00A3C4;
+  --accent: #00E5FF;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.18);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f172a;
-    --foreground: #f8fafc;
-    --glass-bg: rgba(15, 23, 42, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
-  }
+.dark {
+  --background: #000B18;
+  --foreground: #F8FAFC;
+  --primary: #00E5FF;
+  --secondary: #1E3A8A;
+  --accent: #00E5FF;
+  --glass-bg: rgba(8, 16, 33, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -29,6 +30,169 @@ body {
   font-family: Inter, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =========================================================
+   GLOBAL DARK MODE OVERRIDES
+   Ensures every section/card/page wrapper goes dark
+   without needing dark: classes on every single element.
+   IMPORTANT: Exclude gradient hero sections (from-[) so their
+   inner divs don't inherit the page dark background as a
+   dark box over the gradient.
+   ========================================================= */
+.dark body,
+.dark main,
+.dark article,
+.dark section:not([class*="from-["]):not([class*="bg-gradient"]),
+.dark div:not([class*="bg-gradient"]):not([class*="bg-cyan"]):not([class*="bg-blue"]):not([class*="bg-[#"]):not([class*="bg-primary"]):not([class*="bg-dark"]):not([class*="from-["]) {
+  background-color: inherit;
+}
+
+/* Gradient hero sections: force transparent so children don't
+   inherit the dark page background as a visible box */
+.dark section[class*="from-["],
+.dark section[class*="bg-gradient"] {
+  background-color: transparent !important;
+}
+
+/* Page wrappers & content areas */
+.dark .min-h-screen,
+.dark [class*="min-h-screen"] {
+  background-color: #000B18 !important;
+  color: #F8FAFC;
+}
+
+/* White card/panel backgrounds → dark card.
+   Exclude: elements with blur-3xl (decorative blobs inside hero gradients) */
+.dark .bg-white:not([class*="blur-3xl"]):not([class*="blur-2xl"]) {
+  background-color: #0f172a !important;
+  color: #F8FAFC;
+}
+
+/* Gray backgrounds → dark variants */
+.dark .bg-gray-50 {
+  background-color: #04101f !important;
+}
+.dark .bg-gray-100 {
+  background-color: #1e293b !important;
+}
+.dark .bg-gray-200 {
+  background-color: #334155 !important;
+}
+
+/* Gradient page backgrounds → dark gradient */
+.dark [class*="from-gray-50"],
+.dark [class*="from-slate-50"],
+.dark [class*="from-cyan-50"],
+.dark [class*="from-blue-50"] {
+  --tw-gradient-from: #000B18 !important;
+}
+.dark [class*="via-white"],
+.dark [class*="via-gray-50"],
+.dark [class*="via-slate-50"] {
+  --tw-gradient-via: #0f172a !important;
+}
+.dark [class*="to-cyan-50"],
+.dark [class*="to-blue-50"],
+.dark [class*="to-gray-50"],
+.dark [class*="to-slate-50"] {
+  --tw-gradient-to: #1e293b !important;
+}
+
+/* Text color overrides in dark mode */
+.dark .text-gray-900,
+.dark .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+.dark .text-gray-700 {
+  color: #cbd5e1 !important;
+}
+.dark .text-gray-600 {
+  color: #94a3b8 !important;
+}
+.dark .text-gray-500 {
+  color: #64748b !important;
+}
+
+/* Borders */
+.dark .border-gray-100 {
+  border-color: #1e293b !important;
+}
+.dark .border-gray-200 {
+  border-color: #334155 !important;
+}
+.dark .border-gray-300 {
+  border-color: #475569 !important;
+}
+
+/* Inputs — do NOT override background-color globally;
+   transparent inputs inside rounded wrappers would get sharp dark boxes.
+   Handle bg per component with dark: classes instead. */
+.dark input:not([class*="bg-"]),
+.dark textarea:not([class*="bg-"]),
+.dark select:not([class*="bg-"]) {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+  border-radius: inherit;
+}
+/* Transparent inputs (e.g. inside pill wrappers) — only color/placeholder */
+.dark input[class*="bg-transparent"],
+.dark textarea[class*="bg-transparent"] {
+  background-color: transparent !important;
+  color: #f1f5f9 !important;
+  border-color: transparent !important;
+  border-radius: inherit;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Cards */
+.dark .card,
+.dark .card-premium {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+}
+
+/* Glass effects in dark */
+.dark .glass {
+  background: rgba(8, 16, 33, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark .glass-strong {
+  background: rgba(10, 20, 45, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Hover states */
+.dark .hover\:bg-gray-50:hover {
+  background-color: #1e293b !important;
+}
+.dark .hover\:bg-gray-100:hover {
+  background-color: #1e293b !important;
+}
+
+/* Prose (blog content) in dark */
+.dark .prose {
+  color: #cbd5e1;
+}
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4 {
+  color: #f1f5f9;
+}
+.dark .prose blockquote {
+  background-color: rgba(0, 180, 216, 0.08) !important;
+  border-left-color: #00b4d8 !important;
+  color: #94a3b8;
+}
+.dark .prose code {
+  background-color: #1e293b !important;
+  color: #00E5FF !important;
 }
 
 @layer base {
@@ -56,8 +220,8 @@ body {
 
   /* Premium Buttons */
   .btn-primary {
-    @apply bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white px-6 py-3 rounded-lg font-medium 
-    hover:shadow-2xl hover:shadow-[#8B1E1E]/30 transition-all duration-300 
+    @apply bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white px-6 py-3 rounded-lg font-medium 
+    hover:shadow-2xl hover:shadow-[#00b4d8]/30 transition-all duration-300 
     transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden;
   }
 
@@ -84,7 +248,7 @@ body {
 
   .input-field {
     @apply w-full px-4 py-3 rounded-lg border border-gray-300 
-    focus:border-[#8B1E1E] focus:ring-4 focus:ring-[#8B1E1E]/10 
+    focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 
     transition-all duration-200 outline-none;
   }
 
@@ -104,7 +268,7 @@ body {
 
   /* Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-[#8B1E1E] via-[#C74D4D] to-[#8B1E1E] 
+    @apply bg-gradient-to-r from-[#00b4d8] via-[#00E5FF] to-[#00b4d8] 
     bg-clip-text text-transparent bg-[length:200%_auto];
     animation: gradient-shift 3s ease infinite;
   }
@@ -112,15 +276,15 @@ body {
   /* Badge */
   .badge-premium {
     @apply inline-flex items-center px-3 py-1 rounded-full 
-    bg-gradient-to-r from-[#FCE9E9] to-[#FFE5E5] 
-    text-[#8B1E1E] text-sm font-semibold
-    border border-[#8B1E1E]/10 shadow-sm;
+    bg-gradient-to-r from-cyan-50 to-cyan-100 
+    text-[#0077b6] text-sm font-semibold
+    border border-[#00b4d8]/10 shadow-sm;
   }
 
   /* Input Field */
   .input-field {
     @apply w-full px-4 py-3 rounded-lg border border-gray-300 
-    focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]/30 focus:border-[#8B1E1E]
+    focus:outline-none focus:ring-2 focus:ring-[#00b4d8]/30 focus:border-[#00b4d8]
     transition-all duration-300 text-gray-900 placeholder-gray-500;
   }
 }
@@ -137,13 +301,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8B1E1E, #C74D4D);
+  background: linear-gradient(180deg, #00b4d8, #0077b6);
   border-radius: 10px;
   border: 2px solid #f8f9fa;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #6B1515, #A73D3D);
+  background: linear-gradient(180deg, #0096c7, #023e8a);
 }
 
 /* Animations */
@@ -192,10 +356,10 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(139, 30, 30, 0.3);
+    box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(139, 30, 30, 0.6);
+    box-shadow: 0 0 40px rgba(0, 180, 216, 0.6);
   }
 }
 
@@ -238,7 +402,7 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: linear-gradient(45deg, #8B1E1E, #C74D4D, #8B1E1E);
+  background: linear-gradient(45deg, #00b4d8, #00E5FF, #00b4d8);
   opacity: 0;
   z-index: -1;
   filter: blur(10px);
@@ -279,13 +443,13 @@ body {
 }
 
 .prose a {
-  @apply text-[#8B1E1E] hover:text-[#C74D4D] no-underline 
-  border-b-2 border-[#8B1E1E]/20 hover:border-[#8B1E1E] 
+  @apply text-[#00b4d8] hover:text-[#00E5FF] no-underline 
+  border-b-2 border-[#00b4d8]/20 hover:border-[#00b4d8] 
   transition-all duration-200;
 }
 
 .prose code {
-  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono text-[#8B1E1E];
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono text-[#00b4d8];
 }
 
 .prose pre {
@@ -293,6 +457,6 @@ body {
 }
 
 .prose blockquote {
-  @apply border-l-4 border-[#8B1E1E] pl-6 italic text-gray-700 
-  bg-[#FCE9E9]/30 py-2 rounded-r-lg;
+  @apply border-l-4 border-[#00b4d8] pl-6 italic text-gray-700 
+  bg-cyan-50/30 py-2 rounded-r-lg;
 }

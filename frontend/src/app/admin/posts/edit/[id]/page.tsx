@@ -151,7 +151,7 @@ export default function EditPost() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B1E1E]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00b4d8]"></div>
       </div>
     );
   }
@@ -185,7 +185,7 @@ export default function EditPost() {
             value={formData.title}
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-lg font-semibold text-gray-900 bg-white"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-lg font-semibold text-gray-900 bg-white"
           />
         </div>
 
@@ -198,7 +198,7 @@ export default function EditPost() {
             value={formData.excerpt}
             onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
             rows={3}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none resize-none text-gray-900 bg-white"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none resize-none text-gray-900 bg-white"
           />
         </div>
 
@@ -234,7 +234,7 @@ export default function EditPost() {
               <select
                 value={formData.category_id}
                 onChange={(e) => setFormData({ ...formData, category_id: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-gray-900 bg-white"
               >
                 <option value="">Select category</option>
                 {categories.map((cat) => (
@@ -252,7 +252,7 @@ export default function EditPost() {
               <select
                 value={formData.status}
                 onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none text-gray-900 bg-white"
               >
                 <option value="draft">Draft</option>
                 <option value="published">Published</option>
@@ -273,7 +273,7 @@ export default function EditPost() {
             {/* Slug */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Slug (URL)</label>
-              <div className="flex items-center rounded-lg border border-gray-200 overflow-hidden focus-within:border-[#8B1E1E]">
+              <div className="flex items-center rounded-lg border border-gray-200 overflow-hidden focus-within:border-[#00b4d8]">
                 <span className="px-3 py-3 bg-gray-50 text-gray-400 text-sm border-r border-gray-200">/blog/</span>
                 <input
                   type="text"
@@ -292,7 +292,7 @@ export default function EditPost() {
                 type="text"
                 value={formData.focus_keyword}
                 onChange={(e) => setFormData({ ...formData, focus_keyword: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                 placeholder="e.g. healthy lifestyle tips"
               />
               {formData.focus_keyword && formData.content && (
@@ -314,7 +314,7 @@ export default function EditPost() {
                 type="text"
                 value={formData.meta_title}
                 onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                 placeholder="SEO title (defaults to post title)"
               />
             </div>
@@ -334,7 +334,7 @@ export default function EditPost() {
                 value={formData.meta_description}
                 onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
                 rows={3}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none resize-none text-sm text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none resize-none text-sm text-gray-900 bg-white"
                 placeholder="Describe your post for search engines (120-160 chars)..."
               />
               {/* Preview */}
@@ -354,7 +354,7 @@ export default function EditPost() {
                 type="text"
                 value={formData.meta_keywords}
                 onChange={(e) => setFormData({ ...formData, meta_keywords: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] outline-none text-sm text-gray-900 bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] outline-none text-sm text-gray-900 bg-white"
                 placeholder="keyword1, keyword2, keyword3"
               />
             </div>
@@ -397,7 +397,7 @@ export default function EditPost() {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50"
+            className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50"
           >
             {saving ? (
               <>

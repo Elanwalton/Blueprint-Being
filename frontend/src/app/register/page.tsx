@@ -98,7 +98,7 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen pt-20 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full blur-3xl opacity-30 -z-10" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-200 to-purple-200 rounded-full blur-3xl opacity-30 -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200 to-cyan-200 rounded-full blur-3xl opacity-30 -z-10" />
 
       <div className="max-w-md w-full">
@@ -233,15 +233,15 @@ export default function RegisterPage() {
                 name="terms"
                 type="checkbox"
                 required
-                className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded mt-1"
+                className="h-4 w-4 text-cyan-600 focus:ring-pink-500 border-gray-300 rounded mt-1"
               />
               <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
                 I agree to the{' '}
-                <Link href="/terms" className="text-pink-600 hover:text-pink-700 font-medium">
+                <Link href="/terms" className="text-cyan-600 hover:text-cyan-700 font-medium">
                   Terms of Service
                 </Link>{' '}
                 and{' '}
-                <Link href="/privacy" className="text-pink-600 hover:text-pink-700 font-medium">
+                <Link href="/privacy" className="text-cyan-600 hover:text-cyan-700 font-medium">
                   Privacy Policy
                 </Link>
               </label>
@@ -259,7 +259,7 @@ export default function RegisterPage() {
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Already have an account?{' '}
-              <Link href="/login" className="text-pink-600 hover:text-pink-700 font-medium">
+              <Link href="/login" className="text-cyan-600 hover:text-cyan-700 font-medium">
                 Sign in
               </Link>
             </p>

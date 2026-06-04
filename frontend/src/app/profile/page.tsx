@@ -51,7 +51,7 @@ export default function Profile() {
           <p className="text-gray-600 mb-6">You need to be logged in to view your profile</p>
           <a
             href="/login"
-            className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white hover:shadow-xl hover:shadow-[#8B1E1E]/30 transition-all duration-300 font-medium"
+            className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white hover:shadow-xl hover:shadow-[#00b4d8]/30 transition-all duration-300 font-medium"
           >
             Go to Login
           </a>
@@ -63,10 +63,10 @@ export default function Profile() {
   return (
     <div className="min-h-screen pt-20 pb-16">
       {/* Header */}
-      <section className="relative bg-gradient-to-br from-[#8B1E1E] via-[#A73030] to-[#C74D4D] text-white py-16 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#00b4d8] via-[#0096c7] to-[#0077b6] text-white py-16 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-0 right-0 w-40 h-40 bg-[#ffffff] rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#ffffff] rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 rounded-full mb-4 backdrop-blur-sm">
@@ -87,7 +87,7 @@ export default function Profile() {
             {!editing ? (
               <button
                 onClick={() => setEditing(true)}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white hover:shadow-xl hover:shadow-[#8B1E1E]/30 transition-all duration-300 transform hover:-translate-y-0.5"
+                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white hover:shadow-xl hover:shadow-[#00b4d8]/30 transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 <FiEdit2 className="w-4 h-4" />
                 <span>Edit Profile</span>
@@ -156,7 +156,7 @@ export default function Profile() {
           ) : (
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center flex-shrink-0">
                   <FiUser className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -166,7 +166,7 @@ export default function Profile() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center flex-shrink-0">
                   <FiMail className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -176,7 +176,7 @@ export default function Profile() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center flex-shrink-0">
                   <FiCalendar className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -198,15 +198,15 @@ export default function Profile() {
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           <div className="card-premium p-6 text-center">
-            <div className="text-3xl font-display font-bold text-[#8B1E1E] mb-2">0</div>
+            <div className="text-3xl font-display font-bold text-[#00b4d8] mb-2">0</div>
             <p className="text-gray-600">Posts Published</p>
           </div>
           <div className="card-premium p-6 text-center">
-            <div className="text-3xl font-display font-bold text-[#8B1E1E] mb-2">0</div>
+            <div className="text-3xl font-display font-bold text-[#00b4d8] mb-2">0</div>
             <p className="text-gray-600">Comments</p>
           </div>
           <div className="card-premium p-6 text-center">
-            <div className="text-3xl font-display font-bold text-[#8B1E1E] mb-2">0</div>
+            <div className="text-3xl font-display font-bold text-[#00b4d8] mb-2">0</div>
             <p className="text-gray-600">Likes Received</p>
           </div>
         </div>

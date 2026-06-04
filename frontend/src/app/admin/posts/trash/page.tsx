@@ -78,13 +78,13 @@ export default function TrashPage() {
 
       {loading ? (
         <div className="flex items-center justify-center py-20">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]" />
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]" />
         </div>
       ) : posts.length === 0 ? (
         <div className="bg-white rounded-xl border border-gray-100 p-16 text-center shadow-sm">
           <FiTrash2 className="w-12 h-12 mx-auto text-gray-300 mb-4" />
           <p className="text-gray-500 text-lg">Trash is empty</p>
-          <Link href="/admin/posts" className="mt-4 inline-block text-sm text-[#8B1E1E] hover:underline">
+          <Link href="/admin/posts" className="mt-4 inline-block text-sm text-[#00b4d8] hover:underline">
             ← Back to Posts
           </Link>
         </div>

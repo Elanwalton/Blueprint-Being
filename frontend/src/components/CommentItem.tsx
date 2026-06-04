@@ -60,7 +60,7 @@ export default function CommentItem({ comment, postId, currentUserId, onUpdate }
       <div className="flex space-x-4">
         {/* Avatar */}
         <div className="flex-shrink-0">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] to-[#C74D4D] flex items-center justify-center text-white font-bold">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00b4d8] to-[#0077b6] flex items-center justify-center text-white font-bold">
             {comment.username[0].toUpperCase()}
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function CommentItem({ comment, postId, currentUserId, onUpdate }
           <div className="mt-2 flex items-center space-x-4">
             <button
               onClick={() => setShowReplyForm(!showReplyForm)}
-              className="text-sm text-gray-600 hover:text-[#8B1E1E] transition-colors flex items-center"
+              className="text-sm text-gray-600 hover:text-[#00b4d8] transition-colors flex items-center"
             >
               <FiMessageCircle className="w-4 h-4 mr-1" />
               Reply

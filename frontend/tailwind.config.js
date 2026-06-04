@@ -5,20 +5,21 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#fdf2f8',
-          100: '#fce7f3',
-          200: '#fbcfe8',
-          300: '#f9a8d4',
-          400: '#f472b6',
-          500: '#ec4899',
-          600: '#db2777',
-          700: '#be185d',
-          800: '#9d174d',
-          900: '#831843',
+          50: '#e0fbfc',
+          100: '#c2f7fc',
+          200: '#91effa',
+          300: '#4ee3f7',
+          400: '#00d4ff', // Base cyan
+          500: '#00b4d8', // Deep cyan
+          600: '#0096c7',
+          700: '#0077b6',
+          800: '#023e8a',
+          900: '#03045e',
         },
         dark: {
           50: '#f8fafc',
@@ -27,10 +28,10 @@ module.exports = {
           300: '#cbd5e1',
           400: '#94a3b8',
           500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
+          600: '#334155',
+          700: '#1e293b',
+          800: '#0f172a',
+          900: '#081021', // Deep dark blue (almost black)
         }
       },
       fontFamily: {

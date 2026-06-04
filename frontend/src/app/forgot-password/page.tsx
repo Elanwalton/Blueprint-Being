@@ -48,7 +48,7 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="min-h-screen pt-20 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full blur-3xl opacity-30 -z-10" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-200 to-purple-200 rounded-full blur-3xl opacity-30 -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200 to-cyan-200 rounded-full blur-3xl opacity-30 -z-10" />
 
       <div className="max-w-md w-full">
@@ -81,7 +81,7 @@ export default function ForgotPasswordPage() {
               <div className="text-sm">
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="font-medium text-pink-600 hover:text-pink-500"
+                  className="font-medium text-cyan-600 hover:text-cyan-500"
                 >
                   Did not receive the email? Try again
                 </button>

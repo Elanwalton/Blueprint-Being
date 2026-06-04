@@ -79,7 +79,7 @@ export default function CommentList({ postId }: CommentListProps) {
   if (loading) {
     return (
       <div className="text-center py-8">
-        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]"></div>
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]"></div>
         <p className="text-gray-600 mt-2">Loading comments...</p>
       </div>
     );
@@ -91,7 +91,7 @@ export default function CommentList({ postId }: CommentListProps) {
         <p className="text-red-600">{error}</p>
         <button
           onClick={fetchComments}
-          className="mt-4 px-4 py-2 text-sm text-[#8B1E1E] hover:underline"
+          className="mt-4 px-4 py-2 text-sm text-[#00b4d8] hover:underline"
         >
           Try again
         </button>
@@ -120,7 +120,7 @@ export default function CommentList({ postId }: CommentListProps) {
           <p className="text-gray-600 mb-4">Please log in to leave a comment</p>
           <a
             href="/login"
-            className="inline-block px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all"
+            className="inline-block px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all"
           >
             Log In
           </a>

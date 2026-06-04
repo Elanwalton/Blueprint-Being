@@ -88,7 +88,7 @@ export default function MediaLibrary() {
         <div className="lg:col-span-3">
           {loading ? (
             <div className="flex justify-center py-20">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]"></div>
             </div>
           ) : media.length === 0 ? (
             <div className="text-center py-20 bg-gray-50 rounded-2xl border border-gray-200 border-dashed">

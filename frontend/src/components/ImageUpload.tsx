@@ -129,7 +129,7 @@ export default function ImageUpload({ onUploadComplete, currentImage, label = 'U
         <div
           className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
             dragActive
-              ? 'border-[#8B1E1E] bg-pink-50'
+              ? 'border-[#00b4d8] bg-cyan-50'
               : 'border-gray-300 hover:border-gray-400'
           }`}
           onDragEnter={handleDrag}
@@ -155,7 +155,7 @@ export default function ImageUpload({ onUploadComplete, currentImage, label = 'U
           <div className="flex flex-wrap items-center justify-center gap-2">
             <label
               htmlFor="image-upload"
-              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white rounded-lg cursor-pointer hover:shadow-lg transition-all"
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white rounded-lg cursor-pointer hover:shadow-lg transition-all"
             >
               <FiUpload className="w-4 h-4 mr-2" />
               Browse Files
@@ -178,7 +178,7 @@ export default function ImageUpload({ onUploadComplete, currentImage, label = 'U
 
       {uploading && (
         <div className="mt-2 text-center">
-          <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-[#8B1E1E]"></div>
+          <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-[#00b4d8]"></div>
           <p className="text-sm text-gray-600 mt-2">Uploading...</p>
         </div>
       )}

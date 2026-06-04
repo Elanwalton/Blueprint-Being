@@ -60,7 +60,7 @@ export default function PostsManagement() {
         </div>
         <Link
           href="/admin/posts/new"
-          className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all"
+          className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all"
         >
           <FiPlus className="w-5 h-5 mr-2" />
           New Post
@@ -76,7 +76,7 @@ export default function PostsManagement() {
             placeholder="Search posts..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none"
+            className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none"
           />
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function PostsManagement() {
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#8B1E1E]"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00b4d8]"></div>
           </div>
         ) : (
           <PostTable

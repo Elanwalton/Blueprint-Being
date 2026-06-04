@@ -75,7 +75,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen pt-20 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full blur-3xl opacity-30 -z-10" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-200 to-purple-200 rounded-full blur-3xl opacity-30 -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200 to-cyan-200 rounded-full blur-3xl opacity-30 -z-10" />
 
       <div className="max-w-md w-full">
@@ -143,7 +143,7 @@ export default function LoginPage() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-cyan-600 focus:ring-pink-500 border-gray-300 rounded"
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
                   Remember me
@@ -153,7 +153,7 @@ export default function LoginPage() {
               <div className="text-sm">
                 <Link
                   href="/forgot-password"
-                  className="text-pink-600 hover:text-pink-700 font-medium"
+                  className="text-cyan-600 hover:text-cyan-700 font-medium"
                 >
                   Forgot password?
                 </Link>
@@ -172,7 +172,7 @@ export default function LoginPage() {
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Don't have an account?{' '}
-              <Link href="/register" className="text-pink-600 hover:text-pink-700 font-medium">
+              <Link href="/register" className="text-cyan-600 hover:text-cyan-700 font-medium">
                 Sign up
               </Link>
             </p>

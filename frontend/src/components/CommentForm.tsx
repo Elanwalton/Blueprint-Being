@@ -56,7 +56,7 @@ export default function CommentForm({ postId, parentId, onSuccess, onCancel, pla
           onChange={(e) => setContent(e.target.value)}
           placeholder={placeholder}
           rows={parentId ? 3 : 4}
-          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#8B1E1E] focus:ring-2 focus:ring-[#8B1E1E]/20 outline-none resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 outline-none resize-none"
           disabled={loading}
         />
       </div>
@@ -69,7 +69,7 @@ export default function CommentForm({ postId, parentId, onSuccess, onCancel, pla
         <button
           type="submit"
           disabled={loading || !content.trim()}
-          className="inline-flex items-center px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#C74D4D] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white font-medium hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? (
             <>
