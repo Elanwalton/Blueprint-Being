@@ -30,7 +30,8 @@ export async function GET(req: NextRequest) {
       bio: data.bio ?? null,
     });
   } catch (err: any) {
-    if (err.code?.startsWith('auth/')) {
+    console.error('[auth/me] Error:', err);
+    if (typeof err.code === 'string' && err.code.startsWith('auth/')) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
     return NextResponse.json({ message: err.message || 'Server error' }, { status: 500 });
