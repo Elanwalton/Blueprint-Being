@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { authAPI } from '@/lib/api';
 import { FiMail, FiLock, FiUser, FiAlertCircle, FiCheckCircle } from 'react-icons/fi';
@@ -46,20 +46,19 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      // 1. Create the Firebase Auth user
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        formData.email,
-        formData.password
-      );
-
-      // 2. Create the Firestore user document via API route
-      //    (authAPI.register now calls /api/auth/register with the admin SDK)
+      // 1. Create the Firebase Auth user AND Firestore document via API route
       await authAPI.register({
         username: formData.username,
         email: formData.email,
         password: formData.password,
       });
+
+      // 2. Now that the account is fully created, sign them in on the client
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
 
       // 3. Store minimal profile for UI use
       localStorage.setItem('user', JSON.stringify({
