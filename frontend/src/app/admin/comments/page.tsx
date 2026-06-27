@@ -27,7 +27,7 @@ export default function CommentModeration() {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const r = await api.get(`/comments/index.php?status=${filter}`, {
+      const r = await api.get(`/comments?status=${filter}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setComments(r.data.comments || []);
@@ -44,7 +44,7 @@ export default function CommentModeration() {
       const token = localStorage.getItem('token');
       try {
         const results = await Promise.allSettled(
-          STATUS_TABS.map(s => api.get(`/comments/index.php?status=${s}`, {
+          STATUS_TABS.map(s => api.get(`/comments?status=${s}`, {
             headers: { Authorization: `Bearer ${token}` },
           }))
         );
@@ -64,7 +64,7 @@ export default function CommentModeration() {
     try {
       const token = localStorage.getItem('token');
       // The backend expects comment_id + status via PUT
-      await api.put('/comments/index.php', { comment_id: id, status }, {
+      await api.put('/comments', { comment_id: id, status }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchComments();
@@ -77,7 +77,7 @@ export default function CommentModeration() {
     if (!confirm('Delete this comment?')) return;
     try {
       const token = localStorage.getItem('token');
-      await api.delete(`/comments/index.php?id=${id}`, {
+      await api.delete(`/comments?id=${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchComments();

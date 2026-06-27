@@ -25,7 +25,7 @@ export default function UsersManagement() {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await api.get('/users/index.php', {
+      const response = await api.get('/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(response.data.users || []);
@@ -43,7 +43,7 @@ export default function UsersManagement() {
 
     try {
       const token = localStorage.getItem('token');
-      await api.delete(`/users/index.php?id=${id}`, {
+      await api.delete(`/users?id=${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchUsers();
@@ -56,7 +56,7 @@ export default function UsersManagement() {
   const handleUpdateRole = async (id: number, role: string) => {
     try {
       const token = localStorage.getItem('token');
-      await api.put('/users/index.php', { id, role }, {
+      await api.put('/users', { id, role }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchUsers();

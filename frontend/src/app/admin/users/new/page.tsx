@@ -29,7 +29,7 @@ export default function NewUser() {
 
     try {
       const token = localStorage.getItem('token');
-      await api.post('/users/index.php', formData, {
+      await api.post('/users', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       router.push('/admin/users');

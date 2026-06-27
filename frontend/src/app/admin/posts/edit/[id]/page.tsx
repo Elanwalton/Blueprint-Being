@@ -122,7 +122,7 @@ export default function EditPost() {
 
   const fetchCategories = async () => {
     try {
-      const response = await api.get('/categories/index.php');
+      const response = await api.get('/categories');
       setCategories(response.data.categories || []);
     } catch (err) {
       console.error('Error fetching categories:', err);

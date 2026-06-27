@@ -16,7 +16,7 @@ export default function Analytics() {
   const fetchAnalytics = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await api.get('/analytics/index.php', {
+      const response = await api.get('/analytics', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStats(response.data);

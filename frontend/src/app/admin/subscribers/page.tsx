@@ -24,7 +24,7 @@ export default function Subscribers() {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await api.get('/newsletter/index.php', {
+      const response = await api.get('/newsletter', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSubscribers(response.data.subscribers || []);

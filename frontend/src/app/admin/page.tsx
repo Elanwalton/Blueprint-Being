@@ -25,7 +25,7 @@ export default function AdminDashboard() {
       const token = localStorage.getItem('token');
       
       // Fetch analytics data
-      const analyticsResponse = await api.get('/analytics/index.php', {
+      const analyticsResponse = await api.get('/analytics', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -39,7 +39,7 @@ export default function AdminDashboard() {
       }
 
       // Fetch recent posts
-      const postsResponse = await api.get('/posts/index.php?limit=5');
+      const postsResponse = await api.get('/posts?limit=5');
       setRecentPosts(postsResponse.data.posts || []);
     } catch (err) {
       console.error('Error fetching dashboard data:', err);

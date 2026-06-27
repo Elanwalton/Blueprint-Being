@@ -23,7 +23,7 @@ export default function TrashPage() {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const r = await api.get('/posts/index.php?status=trashed', {
+      const r = await api.get('/posts?status=trashed', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(r.data.posts || []);

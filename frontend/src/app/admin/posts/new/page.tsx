@@ -184,7 +184,7 @@ export default function NewPost() {
 
   const fetchCategories = async () => {
     try {
-      const r = await api.get('/categories/index.php');
+      const r = await api.get('/categories');
       setCategories(r.data.categories || []);
     } catch {}
   };

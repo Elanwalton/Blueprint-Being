@@ -24,7 +24,7 @@ export default function PostsManagement() {
         params.status = statusFilter;
       }
 
-      const response = await api.get('/posts/index.php', { params });
+      const response = await api.get('/posts', { params });
       setPosts(response.data.posts || []);
     } catch (err) {
       console.error('Error fetching posts:', err);

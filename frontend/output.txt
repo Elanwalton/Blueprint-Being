@@ -1,0 +1,41 @@
+1. Checking Firebase Authentication users...
+   Found 1 users in Auth.
+   - [Auth] UID: p7jjjtoxFVP9eKvTsUy72pW7qg32, Email: elanwalton@gmail.com
+
+2. Checking Firestore 'users' collection...
+Error during check: Error: 5 NOT_FOUND: 
+    at callErrorFromStatus (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/call.js:32:19)
+    at Object.onReceiveStatus (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client.js:359:73)
+    at Object.onReceiveStatus (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client-interceptors.js:327:181)
+    at /home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/resolving-call.js:135:78
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+for call at
+    at ServiceClientImpl.makeServerStreamRequest (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client.js:342:32)
+    at ServiceClientImpl.<anonymous> (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/make-client.js:105:19)
+    at /home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js:242:33
+    at /home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/build/src/streamingCalls/streamingApiCaller.js:38:28
+    at /home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/build/src/normalCalls/timeout.js:44:16
+    at Object.request (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/build/src/streamingCalls/streaming.js:234:40)
+    at makeRequest (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/retry-request/index.js:159:28)
+    at retryRequest (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/retry-request/index.js:119:5)
+    at StreamProxy.setStream (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/build/src/streamingCalls/streaming.js:225:37)
+    at StreamingApiCaller.call (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/google-gax/build/src/streamingCalls/streamingApiCaller.js:54:16)
+Caused by: Error
+    at QueryUtil._getResponse (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@google-cloud/firestore/build/src/reference/query-util.js:44:23)
+    at CollectionReference._getResponse (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@google-cloud/firestore/build/src/reference/query.js:784:32)
+    at CollectionReference._get (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@google-cloud/firestore/build/src/reference/query.js:777:35)
+    at /home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@google-cloud/firestore/build/src/reference/query.js:745:43
+    at /home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:110:30
+    at NoopContextManager.with (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js:14:19)
+    at ContextAPI.with (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@opentelemetry/api/build/src/api/context.js:51:46)
+    at NoopTracer.startActiveSpan (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js:54:31)
+    at ProxyTracer.startActiveSpan (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js:27:24)
+    at EnabledTraceUtil.startActiveSpan (/home/elanwalton/Desktop/Carson-blog/frontend/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:102:28) {
+  code: 5,
+  details: '',
+  metadata: Metadata {
+    internalRepr: Map(1) { 'x-debug-tracking-id' => [Array] },
+    opaqueData: Map(0) {},
+    options: {}
+  }
+}
