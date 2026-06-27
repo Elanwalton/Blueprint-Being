@@ -15,7 +15,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     // Check authentication using Firebase Auth
     const unsubscribe = auth.onAuthStateChanged((firebaseUser) => {
       if (!firebaseUser) {
-        router.push('/login');
+        router.replace('/login');
         return;
       }
 
@@ -23,19 +23,19 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       // Alternatively we could fetch it from our /api/auth/me endpoint here to be safe
       const userStr = localStorage.getItem('user');
       if (!userStr) {
-        router.push('/login');
+        router.replace('/login');
         return;
       }
 
       try {
         const user = JSON.parse(userStr);
         if (user.role !== 'admin' && user.role !== 'editor' && user.role !== 'author') {
-          router.push('/');
+          router.replace('/');
           return;
         }
         setLoading(false);
       } catch (err) {
-        router.push('/login');
+        router.replace('/login');
       }
     });
 

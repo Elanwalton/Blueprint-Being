@@ -73,23 +73,40 @@ export default function Navbar() {
     isScrolled
       ? 'top-3 left-3 right-3 rounded-2xl'
       : 'top-4 left-4 right-4 rounded-3xl',
-    /* glass bg */
+    /* glass bg — cyan-tinted frosted glass */
     isScrolled
-      ? 'bg-white/90 dark:bg-[#000B18]/95 shadow-2xl shadow-black/10 dark:shadow-black/40 border border-slate-200/80 dark:border-cyan-900/40'
-      : 'bg-white/70 dark:bg-[#000B18]/75 border border-white/40 dark:border-white/10',
-    'backdrop-blur-xl',
+      ? 'bg-white/75 dark:bg-[#000B18]/80'
+      : 'bg-white/55 dark:bg-[#000B18]/60',
+    /* blur */
+    'backdrop-blur-2xl',
+    /* border */
+    isScrolled
+      ? 'border border-cyan-200/60 dark:border-cyan-500/20'
+      : 'border border-white/50 dark:border-cyan-400/10',
+    /* shadow/glow */
+    isScrolled
+      ? 'shadow-2xl shadow-cyan-500/10 dark:shadow-cyan-400/10'
+      : 'shadow-lg shadow-black/5 dark:shadow-black/20',
   ].join(' ');
 
   return (
     <>
       {/* ═══════════════ NAVBAR PILL ═══════════════ */}
       <nav className={navBase} aria-label="Main navigation">
+        {/* Glass inner sheen — top highlight strip */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute top-0 left-[10%] right-[10%] h-px rounded-full
+                     bg-gradient-to-r from-transparent via-white/70 dark:via-white/20 to-transparent"
+        />
+
         {/* Cyan glow underline on scroll */}
         {isScrolled && (
           <span
             aria-hidden
-            className="pointer-events-none absolute bottom-0 left-[15%] right-[15%] h-px rounded-full
-                       bg-gradient-to-r from-transparent via-[#00b4d8]/50 to-transparent"
+            className="pointer-events-none absolute bottom-0 left-[10%] right-[10%] h-px rounded-full
+                       bg-gradient-to-r from-transparent via-[#00b4d8]/60 dark:via-[#00E5FF]/40 to-transparent
+                       transition-opacity duration-500"
           />
         )}
 

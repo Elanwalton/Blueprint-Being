@@ -2,13 +2,13 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { authAPI } from '@/lib/api';
-import { FiMail, FiLock, FiAlertCircle } from 'react-icons/fi';
+import { FiMail, FiLock, FiAlertCircle, FiHome } from 'react-icons/fi';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -18,6 +18,26 @@ export default function LoginPage() {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Redirect already-logged-in users away from login page
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        const userStr = localStorage.getItem('user');
+        try {
+          const user = userStr ? JSON.parse(userStr) : null;
+          if (user?.role === 'admin' || user?.role === 'editor' || user?.role === 'author') {
+            router.replace('/admin');
+          } else {
+            router.replace('/');
+          }
+        } catch {
+          router.replace('/');
+        }
+      }
+    });
+    return () => unsubscribe();
+  }, [router]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -46,9 +66,9 @@ export default function LoginPage() {
 
       // Redirect based on role
       if (user.role === 'admin' || user.role === 'author' || user.role === 'editor') {
-        router.push('/admin');
+        router.replace('/admin');
       } else {
-        router.push('/');
+        router.replace('/');
       }
     } catch (err: any) {
       console.error('Login error:', err);
@@ -75,6 +95,13 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen pt-20 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      {/* Home link */}
+      <div className="absolute top-6 left-6">
+        <Link href="/" className="inline-flex items-center space-x-2 text-gray-600 hover:text-cyan-600 transition-colors font-medium">
+          <FiHome className="w-4 h-4" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-200 to-purple-200 rounded-full blur-3xl opacity-30 -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200 to-cyan-200 rounded-full blur-3xl opacity-30 -z-10" />
 
@@ -174,6 +201,11 @@ export default function LoginPage() {
               Don't have an account?{' '}
               <Link href="/register" className="text-cyan-600 hover:text-cyan-700 font-medium">
                 Sign up
+              </Link>
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              <Link href="/" className="hover:text-cyan-600 transition-colors">
+                ← Return to homepage
               </Link>
             </p>
           </div>
