@@ -114,21 +114,20 @@ export default function Navbar() {
           <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16' : 'h-[72px]'}`}>
 
             {/* ── LOGO + BRAND BLOCK ── */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0" aria-label="Blueprint Being home">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00b4d8] to-[#0077b6]
-                              flex items-center justify-center shadow-lg shadow-[#00b4d8]/30
-                              group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
-                <span className="text-white font-black text-lg select-none">B</span>
-              </div>
-              <div className="hidden sm:flex flex-col justify-center leading-none">
-                <span className="text-[17px] font-bold text-gray-900 dark:text-white tracking-tight
-                                 group-hover:text-[#00b4d8] dark:group-hover:text-[#00E5FF] transition-colors duration-300">
-                  Blueprint Being
-                </span>
-                <span className="text-[11px] text-gray-400 dark:text-gray-500 font-medium tracking-widest uppercase mt-0.5">
-                  Ideas · Stories · Growth
-                </span>
-              </div>
+            <Link href="/" className="flex items-center gap-1 group shrink-0" aria-label="Blueprint Being home">
+              <span className="text-[22px] font-black tracking-tight leading-none select-none
+                               bg-gradient-to-r from-[#00b4d8] via-[#0096c7] to-[#0077b6]
+                               bg-clip-text text-transparent
+                               group-hover:from-[#00E5FF] group-hover:via-[#00b4d8] group-hover:to-[#0096c7]
+                               transition-all duration-300">
+                Blueprint
+              </span>
+              <span className="text-[22px] font-black tracking-tight leading-none select-none
+                               text-gray-800 dark:text-white
+                               group-hover:text-[#00b4d8] dark:group-hover:text-[#00E5FF]
+                               transition-colors duration-300 ml-1.5">
+                Being
+              </span>
             </Link>
 
             {/* ── DESKTOP NAV LINKS ── */}
@@ -301,15 +300,16 @@ export default function Navbar() {
       >
         {/* Sidebar header */}
         <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-gray-100 dark:border-gray-800">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#00b4d8] to-[#0077b6]
-                            flex items-center justify-center shadow text-white font-black text-base">
-              B
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-[15px] font-bold text-gray-900 dark:text-white">Blueprint Being</span>
-              <span className="text-[10px] text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-0.5">Ideas · Stories · Growth</span>
-            </div>
+          <div className="flex items-center gap-1">
+            <span className="text-[20px] font-black tracking-tight leading-none select-none
+                             bg-gradient-to-r from-[#00b4d8] via-[#0096c7] to-[#0077b6]
+                             bg-clip-text text-transparent">
+              Blueprint
+            </span>
+            <span className="text-[20px] font-black tracking-tight leading-none select-none
+                             text-gray-900 dark:text-white ml-1.5">
+              Being
+            </span>
           </div>
           <button
             onClick={() => setIsOpen(false)}
