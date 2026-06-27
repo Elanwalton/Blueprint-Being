@@ -114,19 +114,24 @@ export default function Navbar() {
           <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16' : 'h-[72px]'}`}>
 
             {/* ── LOGO + BRAND BLOCK ── */}
-            <Link href="/" className="flex items-center gap-1 group shrink-0" aria-label="Blueprint Being home">
-              <span className="text-[22px] font-black tracking-tight leading-none select-none
-                               bg-gradient-to-r from-[#00b4d8] via-[#0096c7] to-[#0077b6]
-                               bg-clip-text text-transparent
-                               group-hover:from-[#00E5FF] group-hover:via-[#00b4d8] group-hover:to-[#0096c7]
-                               transition-all duration-300">
-                Blueprint
-              </span>
-              <span className="text-[22px] font-black tracking-tight leading-none select-none
-                               text-gray-800 dark:text-white
-                               group-hover:text-[#00b4d8] dark:group-hover:text-[#00E5FF]
-                               transition-colors duration-300 ml-1.5">
-                Being
+            <Link href="/" className="flex flex-col group shrink-0" aria-label="Blueprint Being home">
+              <div className="flex items-center gap-1">
+                <span className="text-[22px] font-black tracking-tight leading-none select-none
+                                 bg-gradient-to-r from-[#00b4d8] via-[#0096c7] to-[#0077b6]
+                                 bg-clip-text text-transparent
+                                 group-hover:from-[#00E5FF] group-hover:via-[#00b4d8] group-hover:to-[#0096c7]
+                                 transition-all duration-300">
+                  Blueprint
+                </span>
+                <span className="text-[22px] font-black tracking-tight leading-none select-none
+                                 text-gray-800 dark:text-white
+                                 group-hover:text-[#00b4d8] dark:group-hover:text-[#00E5FF]
+                                 transition-colors duration-300 ml-1.5">
+                  Being
+                </span>
+              </div>
+              <span className="hidden sm:block text-[10px] text-gray-400 dark:text-gray-500 font-medium tracking-widest uppercase mt-0.5">
+                Ideas · Stories · Growth
               </span>
             </Link>
 
